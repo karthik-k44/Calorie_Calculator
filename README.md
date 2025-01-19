@@ -31,41 +31,4 @@ Edit
 cd calorie-calculator
 Install the dependencies:
 
-bash
-Copy
-Edit
-npm install
-Start the development server:
-
-bash
-Copy
-Edit
-npm run dev
-Open the app in your browser at:
-
-arduino
-Copy
-Edit
-http://localhost:3000
-Building for Production
-To prepare the project for production:
-
-Run the build command:
-
-bash
-Copy
-Edit
-npm run build
-The production-ready build will be generated in the dist folder.
-
-You can deploy this build to GitHub Pages, Netlify, or any other hosting platform.
-
-Contributing
-Contributions are welcome! To contribute:
-
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Submit a pull request with a description of the changes.
-License
-This project is licensed under the MIT License.
-You can save this as `README.md` in your project directory. Let me know if you'd like further adjustments!
+Url of project : https://calorie-calculator-hackathon.netlify.app/
