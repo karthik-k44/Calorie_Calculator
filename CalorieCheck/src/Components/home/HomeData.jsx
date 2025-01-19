@@ -1,20 +1,19 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Home.css';
 
-const Home = () => {
-  // State to store multiple food items with their quantities
+const HomeData = () => {
+
   const [foodItems, setFoodItems] = useState([{ food: '', quantity: 1 }]);
   const [foodData, setFoodData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Function to handle form submission and fetch data
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Handle empty input
+  
     if (foodItems.some(item => !item.food.trim())) {
       setError('Please enter a valid food name for all items');
       return;
@@ -30,27 +29,22 @@ const Home = () => {
           `https://api.calorieninjas.com/v1/nutrition?query=${item.food}`,
           {
             headers: {
-              'X-Api-Key': 'yuM3GGpG6fWPjv+IaWLM4g==vh2KP1Pe0GltM4Nr', // Use your actual API key here
+              'X-Api-Key': 'yuM3GGpG6fWPjv+IaWLM4g==vh2KP1Pe0GltM4Nr', 
             },
           }
         );
 
-        // Log the API response to inspect the structure
+  
         console.log(response.data);
 
         if (response.data.items.length > 0) {
           const foodItemData = response.data.items[0];
-
-          // Log nutritional values for debugging
           console.log('Food Item Data:', foodItemData);
-
-          // Map the nutritional data from the API response correctly
           const calories = foodItemData.calories || 0;
           const carbs = foodItemData.carbohydrates_total_g || 0;
           const protein = foodItemData.protein_g || 0;
           const fat = foodItemData.fat_total_g || 0;
 
-          // Push the data into the state
           setFoodData(prevData => [
             ...prevData,
             {
@@ -73,18 +67,18 @@ const Home = () => {
     setLoading(false);
   };
 
-  // Function to handle the addition of new food items
+
   const handleAddItem = () => {
     setFoodItems([...foodItems, { food: '', quantity: 1 }]);
   };
 
-  // Function to handle the removal of a food item
+
   const handleRemoveItem = (index) => {
     const updatedItems = foodItems.filter((_, i) => i !== index);
     setFoodItems(updatedItems);
   };
 
-  // Handle food name and quantity changes
+
   const handleInputChange = (index, type, value) => {
     const updatedItems = [...foodItems];
     updatedItems[index][type] = value;
@@ -92,7 +86,8 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className='mainDiv'>
+        <div className="home-container">
       <h2>Food Calorie Calculator</h2>
       <form onSubmit={handleSubmit} className="form-container">
         {foodItems.map((item, index) => (
@@ -162,25 +157,8 @@ const Home = () => {
         </div>
       )}
     </div>
+    </div>
   );
 };
 
-export default Home;
-=======
-import React from 'react'
-import Navbar from '../navbar/Navbar'
-import HomeData from './HomeData'
-import Footer from '../footer/Footer'
-
-const Home = () => {
-  return (
-    <>
-      <Navbar/>
-      <HomeData/>
-      <Footer/>
-    </>
-  )
-}
-
-export default Home
->>>>>>> dfcba7d (Initial commit)
+export default HomeData;
