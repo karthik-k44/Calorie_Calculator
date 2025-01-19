@@ -1,22 +1,4 @@
-<<<<<<< HEAD
 
-import './App.css'
-import Navbar from './Components/navbar'
-import Home from "./Components/home/Home"
-
-function App() {
-
-
-  return (
-    <>
-      <Navbar/>
-      <Home/>
-    </>
-  )
-}
-
-export default App
-=======
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/home/Home";
@@ -43,4 +25,4 @@ function App() {
 }
 
 export default App;
->>>>>>> dfcba7d (Initial commit)
+

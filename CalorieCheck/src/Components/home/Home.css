@@ -1,6 +1,8 @@
-<<<<<<< HEAD
-/* Home.css */
 
+/* Home.css */
+.mainDiv {
+  height: 100vh;
+}
 .home-container {
     font-family: 'Arial', sans-serif;
     margin: 20px;
@@ -102,7 +104,7 @@
     background-color: #f1f1f1;
   }
   
-=======
+
 
 .mainDiv{
   height: 100vh;
@@ -222,4 +224,4 @@ h2 {
 .results-table tr:hover {
   background-color: #444; 
 }
->>>>>>> dfcba7d (Initial commit)
+
